@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrangeiro ou não?</title>
+</head>
+<body>
+    <h1>Estrangeiro ou não?</h1>
+    Qual país você nasceu? <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Processar" onclick="processar()">
+    <div id="res"></div>
+
+    <script>
+        function processar()
+        {
+            var txtpais = document.querySelector('input#txtpais')
+            var res = document.querySelector('div#res')
+            var pais = txtpais.value.toUpperCase()
+
+            if (pais == 'BRASIL')
+            {
+                res.innerHTML = `<p>Você nasceu no ${pais}, logo você é <strong>brasileiro</strong>!</p>`
+            }
+            else
+            {
+                res.innerHTML = `<p>Você nasceu no ${pais}, logo você é <strong>estrangeiro</strong>!</p>`
+            }
+        }
+
+    </script>
+</body>
+</html>
