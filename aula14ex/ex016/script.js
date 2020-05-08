@@ -1,24 +1,30 @@
-let res = document.getElementById('res');
+let res = document.getElementById('res')
 
 
 function contar() {
-    let inicio = Number(document.getElementById('inicio').value);
-    let fim = Number(document.getElementById('fim').value);
-    let passo = Number(document.getElementById('passo').value);
+    let inicio = document.getElementById('inicio').value
+    let fim = document.getElementById('fim').value
+    let passo = document.getElementById('passo').value
 
-    if (inicio > 0) {
-        if (fim > 0) {
-            if (passo == 0) {
-                alert("passo não informado, assumindo 1");
-                passo = 1;
-            }
-            res.innerHTML = "Contando...<br>"
+    if (inicio != null && inicio != "" && fim != null && fim != "") {
+        if (passo == 0) {
+            alert("passo não informado, assumindo 1")
+            passo = 1
+        }
+        inicio = Number(inicio)
+        fim = Number(fim)
+        passo = Number(passo)
+        res.innerHTML = "Contando...<br>"
+        if (fim > inicio) {
             for (let i = inicio; i <= fim; i = i + passo) {
-                res.innerHTML += i + "&#128073";
+                res.innerHTML += i + "&#128073"
             }
-            res.innerHTML += "&#128683";
+            res.innerHTML += "&#128683"
         } else {
-            res.innerHTML = "Não posso contar pra trás..."
+            for (let i = inicio; i >= fim; i = i - passo) {
+                res.innerHTML += i + "&#128073"
+            }
+            res.innerHTML += "&#128683"
         }
     } else {
         res.innerHTML = "Impossível contar..."
