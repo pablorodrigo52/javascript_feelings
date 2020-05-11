@@ -7,6 +7,8 @@ function adicionar() {
             let analisador = document.getElementById('analisador')
             numeros.push(num)
             analisador.innerHTML += `<option value='${num}'>Valor ${num} adicionado.</option>`
+            document.getElementById('num').value = ""
+            document.getElementById('num').focus();
         } else {
             alert('Valor já encontrado na lista.')
         }
