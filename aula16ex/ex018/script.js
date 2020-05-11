@@ -2,9 +2,13 @@ let numeros = []
 
 function adicionar() {
     let num = Number(document.getElementById('num').value)
-    let analisador = document.getElementById('analisador')
-    numeros.push(num)
-    analisador.innerHTML += `<option value='${num}'>Valor ${num} adicionado.</option>`
+    if ((num >= 0) && (num <= 100)) {
+        let analisador = document.getElementById('analisador')
+        numeros.push(num)
+        analisador.innerHTML += `<option value='${num}'>Valor ${num} adicionado.</option>`
+    } else {
+        alert('Valor inválido')
+    }
 }
 
 function finalizar() {
